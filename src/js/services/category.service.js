@@ -8,8 +8,9 @@ export default class CategoryService {
             headers: new Headers({
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            })
-        }).then(res => res.json());
+            }),
+            cache: 'no-cache',
+        });
     }
 
 }

@@ -9,7 +9,8 @@ export default class ItemService {
             headers: new Headers({
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            })
+            }),
+            cache: 'no-cache',
         }).then(res => res.json());
     }
 
@@ -22,8 +23,9 @@ export default class ItemService {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }),
+            cache: 'no-cache',
             body: JSON.stringify(data)
-        }).then(res => res.json());
+        });
     }
 
 }
