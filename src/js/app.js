@@ -32,11 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     router.on('/login', (ctx) => {
         console.log('login');
 
-        if (localStorage.getItem('user-id')) {
-            const home = new HomeRoute().render();
-        } else {
-            window.location.href = '/login';
-        }
+        const login = new LoginRoute().render();
 
     });
 

@@ -23,9 +23,8 @@ export default class LoginRoute  {
     }
 
     onSignInClicked() {
-        this.PersonService.set({ nickname: 'icepick', floor: 'EG' }).then((result) => {
-            console.log(result);
-            localStorage.setItem('user-id', 'yolo');
+        new PersonService().setPerson({ "nickname": "icepick", "floor": "EG" }).then((result) => {
+            localStorage.setItem('user-id', result.hash);
             window.location.href = '/';
         })
     }

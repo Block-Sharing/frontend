@@ -8,7 +8,7 @@ export default class PersonService {
      * import PersonService  from '../services/person.service';
      * new PersonService().set({ nickname: 'icepick', floor; 'EG' });
      */
-    set(data) {
+    setPerson(data) {
         return fetch(config.BASE_URI + '/persons', {
             method: 'POST',
             headers: new Headers({
@@ -16,8 +16,6 @@ export default class PersonService {
                 'Content-Type': 'application/json'
             }),
             body: JSON.stringify(data)
-        }).then(res => res.json())
-            .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));
+        }).then(res => res.json());
     }
 }
