@@ -6,7 +6,7 @@ export default class PersonService {
      * Save user nickname & floor
      *
      * import PersonService  from '../services/person.service';
-     * new PersonService().set({ nickname: 'wohooo' });
+     * new PersonService().set({ nickname: 'icepick', floor; 'EG' });
      */
     set(data) {
         return fetch(config.BASE_URI + '/persons', {
