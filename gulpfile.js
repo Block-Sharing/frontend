@@ -7,6 +7,19 @@ var
     browserSync = require('browser-sync'),
     $ = require('gulp-load-plugins')({lazy: true});
 
+var fs = require('fs'),
+    path = require('path'),
+    url = require('url');
+
+// The default file if the file/path is not found
+var defaultFile = "index.html"
+
+// I had to resolve to the previous folder, because this task lives inside a ./tasks folder
+// If that's not your case, just use `__dirname`
+var folder = path.resolve(__dirname, "./public");
+
+console.log(folder);
+
 gulp.task('styles', function () {
     return gulp
         .src('./src/sass/**/*.scss')
@@ -65,7 +78,16 @@ gulp.task('browser-sync', ['styles', 'scripts'], function () {
     browserSync({
         server: {
             baseDir: "./public/",
-            injectChanges: true // this is new
+            injectChanges: true,
+            middleware: function(req, res, next) {
+                var fileName = url.parse(req.url);
+                fileName = fileName.href.split(fileName.search).join("");
+                var fileExists = fs.existsSync(folder + fileName);
+                if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
+                    req.url = "/" + defaultFile;
+                }
+                return next();
+            }
         }
     });
 });
