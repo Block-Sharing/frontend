@@ -20,7 +20,13 @@ gulp.task('styles', function () {
 gulp.task('vendorScripts', function () {
     gulp.src('./src/js/vendor/**/*.js')
         .pipe(gulp.dest('public/js/vendor'));
-})
+});
+
+gulp.task('templates', function () {
+    gulp.src('./src/templates/**/*.hbs')
+        .pipe(gulp.dest('public/templates'));
+});
+
 
 gulp.task('scripts', function () {
     return browserify("src/js/app.js")
@@ -72,6 +78,8 @@ gulp.task('deploy', function () {
 
 gulp.task('watch', function () {
     // Watch .html files
+    gulp.watch('src/**/*.hbs', ['templates', browserSync.reload]);
+
     gulp.watch('src/**/*.html', ['html', browserSync.reload]);
     gulp.watch("public/*.html").on('change', browserSync.reload);
     // Watch .sass files
@@ -90,6 +98,7 @@ gulp.task('default', function () {
         'vendorScripts',
         'scripts',
         'images',
+        'templates',
         'html',
         'browser-sync',
         'watch'
