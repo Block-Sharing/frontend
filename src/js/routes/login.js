@@ -1,4 +1,5 @@
 import Handlebars from 'handlebars';
+import PersonService from '../services/person.service';
 
 export default class LoginRoute  {
     constructor() {
@@ -22,7 +23,10 @@ export default class LoginRoute  {
     }
 
     onSignInClicked() {
-        localStorage.setItem('user-id', 'yolo');
-        window.location.href = '/';
+        this.PersonService.set({ nickname: 'icepick', floor: 'EG' }).then((result) => {
+            console.log(result);
+            localStorage.setItem('user-id', 'yolo');
+            window.location.href = '/';
+        })
     }
 }
