@@ -8,6 +8,20 @@ header {
   background-color: $primary-color;
 }
 
+.menu__item--search{
+  font-family: FontAwesome;
+  color: #373737;
+  content: "\f002";
+  background-color: #c3c3c3;
+
+}
+.menu__item--add{
+  font-family: FontAwesome;
+  color: #373737;
+  content: "\f067";
+  background-color: #838383;
+}
+
 content {
   flex-direction: column;
 }

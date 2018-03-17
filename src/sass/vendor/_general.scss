@@ -44,13 +44,15 @@ main {
   display: flex;
   display: -webkit-flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
+  justify-content: space-around;
   text-align: center;
 }
 
 .menu__item {
-  height: 30px;
+  height: 60px;
   margin: 10px;
+  padding: 20px;
+  text-align: center;
 }
 
 
