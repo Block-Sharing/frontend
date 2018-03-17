@@ -2,12 +2,13 @@
 /*** Example styles ***/
 $font-stack: Helvetica, Arial, Sand-serif;
 
-$primary-color: #36a1d9;
+$primary-color: #E8413E;
 $color-background: #fff;
+$color-title: #fff;
 $color-text: #252525;
-$color-text-link: #36a1d9;
-$color-text-link-hover: #0944ef;
-$color-border: #3c3c3c;
+$color-text-link: #E8413E;
+$color-text-link-hover: #252525;
+$color-border: #252525;
 
 html {
   height: 100%;
@@ -19,39 +20,24 @@ body {
 }
 
 h1 {
-  // Transition: Used for hover effect
-  transition: all 3s ease-out;
-
-  // Animation: Used with the keyframes below
-  animation: pulsate 8s ease-out infinite;
-
-  // Normal stylin'
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  margin: 0;
-
   font-weight: bold;
   font-size: 6em;
-  color: $primary-color;
-
-  text-align: center;
+  color: $color-title;
   text-transform: uppercase;
+  margin: 10px;
 }
 
-h1:hover {
-  color: $color-text-link-hover;
+h2 {
+  font-weight: bold;
+  font-size: 3em;
+  color: $primary-color;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 main {
   margin: 0px;
   padding: 0px;
-  display: -webkit-flex;
-  display:         flex;
-  -webkit-flex-flow: row;
-  flex-flow: row;
 }
 
 .menu {
