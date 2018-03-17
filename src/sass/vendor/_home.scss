@@ -4,8 +4,17 @@
 }
 
 header {
-  height: 30px;
+  height: 90px;
   background-color: $primary-color;
+  display: flex;
+}
+
+header:before {
+  font-family: FontAwesome;
+  color: $color-icon;
+  content: "\f1ad";
+  font-size: 3em;
+  padding: 25px 10px 25px 25px;
 }
 
 .menu__item--search {
@@ -16,7 +25,7 @@ header {
   font-family: FontAwesome;
   color: $color-icon;
   content: "\f002";
-  font-size: 3em;
+  font-size: 4.5em;
 }
 .menu__item--add {
   background-color: $color-icon-background-dark;
@@ -26,7 +35,7 @@ header {
   font-family: FontAwesome;
   color: $color-icon;
   content: "\f067";
-  font-size: 3em;
+  font-size: 4.5em;
 }
 
 .menu__item {

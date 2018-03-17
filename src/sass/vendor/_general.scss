@@ -27,9 +27,10 @@ body {
 
 h1 {
   font-weight: bold;
-  font-size: 6em;
+  font-size: 2em;
   color: $color-title;
-  margin: 10px;
+  padding: 35px 0;
+  font-weight: 300;
 }
 
 h2 {
@@ -65,28 +66,11 @@ main {
   margin: 15px 0;
 }
 
-/*** Keyframes - used with the "animation" property in the h1 ***/
-
-@keyframes pulsate {
-  0%, 11% {
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(5px);
-  }
-  50%, 61% {
-    transform: translate(-50%, -50%) scale(1.5);
-    filter: none;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(5px);
-  }
-}
-
 /*** Media queries for adjusting to different screen sizes ***/
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
 
