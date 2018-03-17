@@ -50,7 +50,7 @@ gulp.task('scripts', function () {
         .bundle()
         .pipe(source("app.js"))
         .pipe(gulp.dest('./public/js/'))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({stream: true}));
 });
 
 // Optimizes the images that exists
@@ -74,7 +74,7 @@ gulp.task('html', function () {
         .pipe(gulp.dest('public/'))
 });
 
-gulp.task('browser-sync', ['styles', 'scripts'], function () {
+gulp.task('browser-sync', ['styles', 'scripts', 'templates'], function () {
     browserSync({
         server: {
             baseDir: "./public/",
