@@ -58,7 +58,7 @@ details{
 
 details div.content{
   padding:0px 24px 4px 24px;
-  border-bottom: 1px solid #d5d5d5;
+  border-bottom: 1px solid $color-border;
 }
 
 details[open] summary:after {
