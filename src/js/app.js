@@ -12,25 +12,40 @@ document.addEventListener('DOMContentLoaded', () => {
     router.on('/add', (ctx) => {
         console.log('add');
 
-        const add = new AddRoute().render();
+        if (localStorage.getItem('user-id')) {
+            const add = new AddRoute().render();
+        } else {
+            window.location.href = '/login';
+        }
     });
 
     router.on('/search', (ctx) => {
         console.log('search');
 
-        const search = new SearchRoute().render();
+        if (localStorage.getItem('user-id')) {
+            const search = new SearchRoute().render();
+        } else {
+            window.location.href = '/login';
+        }
     });
 
     router.on('/login', (ctx) => {
         console.log('login');
 
-        const search = new LoginRoute().render();
+        if (localStorage.getItem('user-id')) {
+            const home = new HomeRoute().render();
+        } else {
+            window.location.href = '/login';
+        }
+
     });
 
     router.on('router-no-match', (ctx) => {
-        console.log('No route matched');
-
-        const home = new HomeRoute().render();
+        if (localStorage.getItem('user-id')) {
+            const home = new HomeRoute().render();
+        } else {
+            window.location.href = '/login';
+        }
     });
 
     router.enable();
