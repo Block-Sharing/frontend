@@ -8,7 +8,12 @@ $color-title: #fff;
 $color-text: #252525;
 $color-text-link: #E8413E;
 $color-text-link-hover: #252525;
-$color-border: #d5d5d5;
+$color-border: #808080;
+$color-icon: #4e4e4e;
+$color-icon-background-light: #c6c6c6;
+$color-icon-background-dark: #a5a5a5;
+
+
 
 html {
   height: 100%;
@@ -28,9 +33,10 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 1.2em;
   color: $primary-color;
   text-transform: uppercase;
+  margin: 50px 0 5px 25px;
 }
 
 main {
@@ -55,6 +61,9 @@ main {
   text-align: center;
 }
 
+.menu__item > li {
+  margin: 15px 0;
+}
 
 /*** Keyframes - used with the "animation" property in the h1 ***/
 

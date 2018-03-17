@@ -8,31 +8,48 @@ header {
   background-color: $primary-color;
 }
 
-.menu__item--search{
+.menu__item--search {
+  background-color: $color-icon-background-light;
+  margin: 0 auto;
+}
+.menu__item--search::after {
   font-family: FontAwesome;
-  color: #373737;
+  color: $color-icon;
   content: "\f002";
-  background-color: #c3c3c3;
-
+  font-size: 3em;
 }
-.menu__item--add{
+.menu__item--add {
+  background-color: $color-icon-background-dark;
+  margin: 0 auto;
+}
+.menu__item--add::after {
   font-family: FontAwesome;
-  color: #373737;
+  color: $color-icon;
   content: "\f067";
-  background-color: #838383;
+  font-size: 3em;
 }
 
+.menu__item {
+  margin: 0;
+  padding: 60px 0;
+  width: 50%;
+}
+.main__item--content > ul > li {
+  padding-bottom: 5px;
+  color: $color-icon-background-dark;
+  font-size: 0.9em;
+}
 content {
   flex-direction: column;
 }
-
 details{
   border-bottom:1px solid $color-border;
   display:flex;
 }
 
 details div.content{
-  padding:0px 24px 24px 24px;
+  padding:0px 24px 4px 24px;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 details[open] summary:after {
@@ -41,13 +58,11 @@ details[open] summary:after {
   content: "\f0de";
 }
 details[open]{
-  margin-bottom:16px;
   border:none;
   border-radius: 2px;
 }
 details[open]:first-child{
   margin-top:0;
-  margin-bottom:16px;
   border:none;
 }
 details[open]:last-child{
@@ -63,11 +78,9 @@ summary{
   position: relative;
 }
 summary:hover{
-  background:$color-background;
 }
 
 details[open] summary:hover{
-  background:none;
 }
 summary ul {
   padding-left: 0;
@@ -92,7 +105,7 @@ summary::-webkit-details-marker {
 summary::after {
   font-family: FontAwesome;
   content: "\f0dd";
-  color: $color-text;
+  color: $color-border;
   font-size: 1.5em;
   padding: 0;
   text-align: center;
