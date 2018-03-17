@@ -8,10 +8,11 @@ $color-title: #fff;
 $color-text: #252525;
 $color-text-link: #E8413E;
 $color-text-link-hover: #252525;
-$color-border: #252525;
+$color-border: #d5d5d5;
 
 html {
   height: 100%;
+  font-family: $font-stack;
 }
 
 body {
@@ -23,15 +24,12 @@ h1 {
   font-weight: bold;
   font-size: 6em;
   color: $color-title;
-  text-transform: uppercase;
   margin: 10px;
 }
 
 h2 {
-  font-weight: bold;
   font-size: 3em;
   color: $primary-color;
-  text-align: center;
   text-transform: uppercase;
 }
 
